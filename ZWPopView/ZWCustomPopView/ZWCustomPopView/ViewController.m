@@ -54,13 +54,13 @@
     [contentBtn addTarget:self action:@selector(contentBtnClick) forControlEvents:UIControlEventTouchUpInside];
     [_pView showFrom:btn alignStyle:CPAlignStyleCenter];
 }
+
 - (void)contentBtnClick{
     NSLog(@"%s",__func__);
     [_pView dismiss];
 }
 
 - (void)optionClick:(UIButton *)sender{
-    
     NSArray *menus = @[@"发起群聊", @"添加朋友",@"扫一扫",@"收付款"];
     //这里的44是tableView的行高
     ZWCustomPopView *pView = [[ZWCustomPopView alloc]initWithBounds:CGRectMake(0, 0, 120, 44 * menus.count) titleMenus:menus maskAlpha:0.0];
@@ -68,8 +68,6 @@
     pView.containerBackgroudColor = RGBCOLOR(0, 100, 14);//可以用来调节边界线的颜色
     [pView showFrom:sender alignStyle:CPAlignStyleRight];
 }
-
-
 
 #pragma mark- CustomPopOverViewDelegate
 - (void)popOverViewDidShow:(ZWCustomPopView *)pView
