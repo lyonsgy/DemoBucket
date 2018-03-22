@@ -37,7 +37,7 @@
 
 //    _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
     _imageView.image = [UIImage imageNamed:@"shoppingCar"];
-    _imageView.center = CGPointMake(270, 320);
+//    _imageView.center = CGPointMake(300, 250);
 //    [self.view addSubview:_imageView];
 
 //    _cntLabel = [[UILabel alloc] initWithFrame:CGRectMake(280, 295, 20, 20)];
@@ -56,15 +56,16 @@
     
     _path = [UIBezierPath bezierPath];
     //初始位置
-    [_path moveToPoint:CGPointMake(200, 100)];
+    [_path moveToPoint:_btn.center];
     //结束位置，过程节点
-    [_path addCurveToPoint:CGPointMake(50, ScreenHeight-50) controlPoint1:CGPointMake(100, 100) controlPoint2:CGPointMake(300, 300)];
-
+    [_path addCurveToPoint:_imageView.center controlPoint1:CGPointMake(100, 100) controlPoint2:CGPointMake(300, 300)];
 }
+
 -(void)expandButtonClicked:(id)sender withEvent:(UIEvent*)event{
     
 }
-- (void)startAnimation {
+
+- (void)startAnimation{
     
 //    _btn.enabled = NO;
     if (!_layer) {
